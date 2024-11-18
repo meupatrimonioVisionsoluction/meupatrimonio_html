@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Patrimônio</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastrar Patrimônio</h1>
+        <form id="formCadastro">
+            <input type="text" name="nome_patrimonio" placeholder="Nome do Patrimônio" required />
+            <input type="text" name="codigo_patrimonio" placeholder="Código do Patrimônio" required />
+            <input type="text" name="funcionario" placeholder="Funcionário Responsável" />
+            <input type="datetime-local" name="data_insercao" id="dataInsercao" />
+            <select name="setor" required>
+                <option value="" disabled selected>Setor:</option>
+                <option value="Saude">Saúde</option>
+                <option value="Educacao">Educação</option>
+                <option value="Urbano">Urbano</option>
+                <option value="Agropecuario">Agropecuário</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Prefeitura">Prefeitura</option>
+                <option value="Saneamento">Saneamento</option>
+                <option value="Esportes">Esportes</option>
+                <option value="Cultura">Cultura</option>
+            </select>
+            <input type="text" name="local" placeholder="Localização" />
+            <select name="status">
+                <option value="" disabled selected>Status:</option>
+                <option value="Ativo">Ativo</option>
+                <option value="Inativo">Inativo</option>
+                <option value="Manutencao">Em manutenção</option>
+            </select>
+            <button type="submit">Salvar Patrimônio</button>
+            <a href="../page1/index.html" class="button">Voltar</a>
+        </form>
+    </div>
+    <script src="./cadastrar.js"></script>
+</body>
+</html>
