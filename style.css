@@ -10,34 +10,49 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: linear-gradient(135deg, #f0f4f8 0%, #a8d8ea 100%);
 }
 
 .container{
-    margin-top: 280px;
+    margin-top: 60px; /* Ajustado para uma aparência mais equilibrada */
     background-color: #71b1ec;
     width: 600px;
     max-width: 90%;
     padding: 20px;
-    padding-bottom: 80px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.container :hover{
+    transform: translateY(-5px);
+}
+
+.container img{
+    max-width: 100%; /* Mantém a imagem responsiva */
+    height: auto; /* Ajusta a altura automaticamente */
 }
 
 .container h1{
-    color: #000;
+    color: #f9f9f9;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
+    font-size: 2.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 form{
-    width: 300px;
+    width: 100%;
     margin-top: 25px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .input{
@@ -53,11 +68,35 @@ label{
 }
 
 input{
-    padding: 5px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
     font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Adicionando transição para box-shadow */
+}
+
+input:focus {
+    border-color: #3b5fd3; /* Mudança de cor ao focar */
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px rgba(59, 95, 211, 0.5);
+}
+
+input::placeholder {
+    color: #aaa; /* Cor do placeholder */
+    opacity: 1; /* Garante que a opacidade do placeholder seja total */
+}
+
+input:hover {
+    border-color: #021c34; /* Mudança de cor ao passar o mouse */
+}
+
+input:disabled {
+    background-color: #f0f0f0; /* Cor de fundo para inputs desabilitados */
+    border-color: #ccc; /* Mantém a borda cinza */
+    color: #999; /* Cor do texto desabilitado */
+    cursor: not-allowed; /* Cursor indicando que está desabilitado */
+    opacity: 0.7; /* Opacidade para indicar desabilitado */
 }
 
 button {
@@ -71,15 +110,18 @@ button {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transições adicionais */
 }
 
 button:hover {
     background-color: #0f3b8d; /* Cor ao passar o mouse */
+    
 }
 
 button:active {
-    background-color: #3e8e41; /* Cor ao clicar */
+    background-color: #0c92c2; /* Cor ao clicar */
+    transform: translateY(1px); /* Leve queda ao clicar */
+
 }
 
 #errorMessage{
@@ -89,3 +131,23 @@ button:active {
     text-align: center;
     margin-top: 20px;
 }
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px; /* Reduzir o padding em telas menores */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Ajustar tamanho da fonte */
+    }
+
+    button {
+        font-size: 14px; /* Ajustar tamanho da fonte do botão */
+    }
+
+    input {
+        font-size: 14px; /* Ajustar tamanho da fonte do input */
+    }
+}
+
